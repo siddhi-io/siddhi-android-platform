@@ -17,8 +17,6 @@
  */
  package org.wso2.siddhi.android.platform;
 
-// Declare any non-default types here with import statements
-
 interface IRequestController { //Todo: Siddhi App Controller
 
     String startSiddhiApp(String siddhiApp);
