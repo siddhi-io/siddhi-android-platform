@@ -57,7 +57,6 @@ public class SiddhiAppService extends Service {
                 NOTIFICATION_CHANNEL_NAME,
                 NOTIFICATION_TITLE, NOTIFICATION_BODY, R.drawable.icon, NOTIFICATION_ID,
                 false));
-
         return START_STICKY;
     }
 

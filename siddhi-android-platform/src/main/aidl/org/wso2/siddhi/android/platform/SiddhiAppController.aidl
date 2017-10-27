@@ -18,8 +18,12 @@
 
 package org.wso2.siddhi.android.platform;
 
+/**
+ * Interface to create and stop Siddhi Apps
+ */
 interface SiddhiAppController {
 
     String startSiddhiApp(String siddhiApp);
+
     void stopSiddhiApp(String siddhiAppName);
 }

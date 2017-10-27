@@ -36,12 +36,12 @@ class AppManager {
     private SiddhiManager siddhiManager;
     private Map<String, SiddhiAppRuntime> siddhiAppList;
 
-    AppManager() {
+    public AppManager() {
         this.siddhiAppList = new HashMap<>();
         this.siddhiManager = new SiddhiManager();
     }
 
-    String startApp(String siddhiApp) {
+    public String startApp(String siddhiApp) {
         try {
             SiddhiAppRuntime siddhiAppRuntime = siddhiManager.createSiddhiAppRuntime(siddhiApp);
             String appIdentifier = siddhiAppRuntime.getName();
@@ -57,9 +57,8 @@ class AppManager {
         }
     }
 
-    void stopApp(String appName) {
+    public void stopApp(String appName) {
         SiddhiAppRuntime siddhiAppRuntime = siddhiAppList.remove(appName);
-
         if (siddhiAppRuntime == null) {
             Log.e("Siddhi Platform", "No app with name, '" + appName + "', is currently" +
                     " executing. ");

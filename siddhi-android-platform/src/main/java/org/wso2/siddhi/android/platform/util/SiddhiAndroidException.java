@@ -34,5 +34,4 @@ public class SiddhiAndroidException extends RuntimeException {
     public SiddhiAndroidException(Throwable exception) {
         super(exception);
     }
-
 }
