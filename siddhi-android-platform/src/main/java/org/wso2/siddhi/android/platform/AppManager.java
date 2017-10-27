@@ -6,15 +6,16 @@
  * in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the
+ * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
  */
+
 package org.wso2.siddhi.android.platform;
 
 import android.util.Log;
@@ -38,12 +39,7 @@ class AppManager {
         this.siddhiManager = new SiddhiManager();
     }
 
-    /**
-     * Start a new Siddhi App
-     *
-     * @param siddhiApp Siddhi App definition
-     */
-    String startApp(String siddhiApp) { //return the app name
+    String startApp(String siddhiApp) {
         try {
             SiddhiAppRuntime siddhiAppRuntime = siddhiManager.createSiddhiAppRuntime(siddhiApp);
             String appIdentifier = siddhiAppRuntime.getName();
@@ -59,12 +55,6 @@ class AppManager {
         }
     }
 
-    /**
-     * Shutdown a running Siddhi App
-     *
-     * @param appName unique identifier to identify the app (as previously provided when
-     *                starting the app)
-     */
     void stopApp(String appName) {
         SiddhiAppRuntime siddhiAppRuntime = siddhiAppList.remove(appName);
 
