@@ -18,7 +18,7 @@
 
 package org.wso2.siddhi.android.platform;
 
-interface IRequestController { //Todo: Siddhi App Controller
+interface SiddhiAppController {
 
     String startSiddhiApp(String siddhiApp);
     void stopSiddhiApp(String siddhiAppName);

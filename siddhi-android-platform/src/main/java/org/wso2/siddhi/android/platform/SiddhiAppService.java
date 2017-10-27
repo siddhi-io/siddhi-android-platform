@@ -67,7 +67,7 @@ public class SiddhiAppService extends Service {
         return R.drawable.icon;
     }
 
-    private class RequestController extends IRequestController.Stub {
+    private class RequestController extends SiddhiAppController.Stub {
 
         @Override
         public String startSiddhiApp(String siddhiApp) throws RemoteException {
@@ -117,5 +117,4 @@ public class SiddhiAppService extends Service {
         notificationManager.notify(notificationId, notification);
         return notification;
     }
-
 }

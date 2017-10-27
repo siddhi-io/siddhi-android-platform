@@ -101,5 +101,4 @@ dependencies {
     implementation "org.osgi:org.osgi.core:6.0.0"
     implementation "org.wso2.orbit.com.lmax:disruptor:3.3.2.wso2v2"
     implementation "org.antlr:antlr4-runtime:4.5.1"
-
 }

@@ -28,7 +28,6 @@ import org.wso2.siddhi.query.compiler.exception.SiddhiParserException;
 import java.util.HashMap;
 import java.util.Map;
 
-
 class AppManager {
 
     private SiddhiManager siddhiManager;

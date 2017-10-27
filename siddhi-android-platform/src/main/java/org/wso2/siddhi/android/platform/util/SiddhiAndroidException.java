@@ -18,7 +18,6 @@
 
 package org.wso2.siddhi.android.platform.util;
 
-
 public class SiddhiAndroidException extends RuntimeException {
 
     public SiddhiAndroidException() {
