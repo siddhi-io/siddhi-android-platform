@@ -29,6 +29,9 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.support.v4.app.NotificationCompat;
 
+/**
+ * Android Service class to execute Siddhi Apps.
+ */
 public class SiddhiAppService extends Service {
 
     public static SiddhiAppService instance;

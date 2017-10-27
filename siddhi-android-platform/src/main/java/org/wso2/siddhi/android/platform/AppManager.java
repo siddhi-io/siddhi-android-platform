@@ -28,6 +28,9 @@ import org.wso2.siddhi.query.compiler.exception.SiddhiParserException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Manage Siddhi Apps sent to the Android Siddhi Service
+ */
 class AppManager {
 
     private SiddhiManager siddhiManager;
