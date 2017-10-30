@@ -34,7 +34,9 @@ import android.support.v4.app.NotificationCompat;
  */
 public class SiddhiAppService extends Service {
 
-    public static SiddhiAppService instance;
+    //Keep this instance since there should be a method for Siddhi extensions to access android
+    // service. Could not get the instance dynamically without having access to a Android activity.
+    private static SiddhiAppService curreentInstance;
     private RequestController requestController;
     private AppManager appManager;
 
@@ -46,9 +48,14 @@ public class SiddhiAppService extends Service {
     public static final String NOTIFICATION_BODY = "Siddhi Platform Service started";
 
     public SiddhiAppService() {
-        SiddhiAppService.instance = this;
         appManager = new AppManager();
         requestController = new RequestController();
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        SiddhiAppService.curreentInstance = this;
     }
 
     @Override
@@ -80,6 +87,12 @@ public class SiddhiAppService extends Service {
         public void stopSiddhiApp(String siddhiAppName) throws RemoteException {
             appManager.stopApp(siddhiAppName);
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        SiddhiAppService.curreentInstance = null;
     }
 
     public Notification createNotification(String notificationChanelId,
@@ -118,5 +131,9 @@ public class SiddhiAppService extends Service {
         }
         notificationManager.notify(notificationId, notification);
         return notification;
+    }
+
+    public static SiddhiAppService getServiceInstance(){
+        return SiddhiAppService.curreentInstance;
     }
 }
