@@ -1,0 +1,37 @@
+site_name: Siddhi Android Platform
+site_description: Stream Processing in Android
+site_author: WSO2
+site_url: https://wso2.github.io/siddhi-android-platform
+extra_css:
+- stylesheets/extra.css
+repo_name: WSO2 Siddhi Android Platform
+repo_url: https://github.com/wso2/siddhi-android-platform
+copyright: Copyright &copy; 2011 - 2017 WSO2
+extra:
+  logo: images/siddhi-logo-w.svg
+  palette:
+    primary: teal
+    accent: teal
+  social:
+  - type: github
+    link: https://github.com/wso2/siddhi-android-platform
+  - type: linkedin
+    link: https://www.linkedin.com/groups/13553064
+site_favicon: images/favicon.ico
+google_analytics:
+- UA-103065-28
+- auto
+markdown_extensions:
+- admonition
+- toc(permalink=true)
+- codehilite(guess_lang=false)
+pages:
+- Welcome to Siddhi Android Platform: index.md
+- Quick Start Guide: documentation/siddhi-android-platform-quickstart.md
+- License: license.md
+theme:
+  name: material
+  logo: images/siddhi-logo-w.svg
+  palette:
+    primary: teal
+    accent: teal
