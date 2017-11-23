@@ -29,9 +29,4 @@ pages:
 - Welcome to Siddhi Android Platform: index.md
 - Quick Start Guide: documentation/siddhi-android-platform-quickstart.md
 - License: license.md
-theme:
-  name: material
-  logo: images/siddhi-logo-w.svg
-  palette:
-    primary: teal
-    accent: teal
+theme: material
