@@ -25,11 +25,9 @@ allprojects {
        google()
        jcenter()
        maven { url 'http://maven.wso2.org/nexus/content/groups/wso2-public/' }
-       maven { url 'https://jitpack.io' }
    }
 }
-```
-    
+```    
 #### Step 3: Add required dependencies to module build.gradle
 
 ```groovy
@@ -62,10 +60,23 @@ implementation("org.apache.log4j.wso2:log4j:1.2.17.wso2v1") {
 implementation "org.osgi:org.osgi.core:6.0.0"
 implementation "org.wso2.orbit.com.lmax:disruptor:3.3.2.wso2v2"
 implementation "org.antlr:antlr4-runtime:4.5.1"
-implementation 'com.github.chamathabeysinghe:siddhi-android-platform:test-SNAPSHOT'
-implementation 'com.github.chamathabeysinghe:siddhi-io-android:test-SNAPSHOT'
-
 ```
+Next you have to add android libraries Siddhi Android Platfoorm and Siddhi IO Android. To add these you can either locally build them or get from the public repository.
+To get from public repository add following dependencies
+```groovy
+implementation 'org.wso2.siddhi.android.platform:siddhi-android-platform:1.0.0'
+implementation 'org.wso2.siddhi.extension.io.android:siddhi-io-android:1.0.0'
+```
+To locally build, clone the required repos and do a gradle build 
+```git
+git clone https://github.com/wso2-extensions/siddhi-io-android.git
+git clone https://github.com/wso2/siddhi-android-platform.git
+```
+Then execute gradle build command. This will create aar files in build/outpus/aar directory. 
+Then from android studio add these aar files to your project. 
+
+![](../images/tutorial/aar.png?raw=true "Overview")
+![](../docs/images/tutorial/aar.png?raw=true "Overview")
 
 #### Step 4: Set build configurations for the app
 Set packaging options 
@@ -79,8 +90,7 @@ packagingOptions {
    merge 'META-INF/annotations/org.wso2.siddhi.annotation.Extension'
 }
 ```
-Enable multidex 
-Add following lines to defaultConfig block in the module level build.gradle. 
+To enable multidex add following lines to defaultConfig block in the module level build.gradle. 
 ```groovy
 multiDexEnabled true
 android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
