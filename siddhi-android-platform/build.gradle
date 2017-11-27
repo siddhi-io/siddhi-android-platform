@@ -97,4 +97,24 @@ dependencies {
     implementation "org.osgi:org.osgi.core:6.0.0"
     implementation "org.wso2.orbit.com.lmax:disruptor:3.3.2.wso2v2"
     implementation "org.antlr:antlr4-runtime:4.5.1"
+
+}
+
+apply plugin: 'maven'
+
+//def someFile = file('build/outputs/aar/siddhi-android-platform-release.aar')
+//
+//artifacts {
+//    archives someFile
+//}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: "http://192.168.56.236:8081/nexus/service/local/staging/deploy/maven2") {
+            authentication(userName: System.getenv("USER_NAME"), password: System.getenv("PASSWORD"))
+            pom.groupId = "org.wso2.siddhi.android.platform"
+            pom.artifactId = "siddhi-android-platform"
+            pom.version = '1.2.3'
+        }
+    }
 }
