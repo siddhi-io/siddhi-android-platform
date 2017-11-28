@@ -98,3 +98,16 @@ dependencies {
     implementation "org.wso2.orbit.com.lmax:disruptor:3.3.2.wso2v2"
     implementation "org.antlr:antlr4-runtime:4.5.1"
 }
+
+apply plugin: 'maven'
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: System.getenv("DEPLOY_URL")) {
+            authentication(userName: System.getenv("USER_NAME"), password: System.getenv("PASSWORD"))
+            pom.groupId = "org.wso2.siddhi.android.platform"
+            pom.artifactId = "siddhi-android-platform"
+            pom.version = '1.0.0'
+        }
+    }
+}
