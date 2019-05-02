@@ -16,22 +16,14 @@
  * under the License.
  */
 
-package org.wso2.siddhi.android.platform.util;
+package io.siddhi.android.platform;
 
 /**
- * This Exception wraps the errors thrown by Siddhi
+ * Interface to create and stop Siddhi Apps
  */
-public class SiddhiAndroidException extends RuntimeException {
+interface SiddhiAppController {
 
-    public SiddhiAndroidException() {
-        super();
-    }
+    String startSiddhiApp(String siddhiApp);
 
-    public SiddhiAndroidException(String exception) {
-        super(exception);
-    }
-
-    public SiddhiAndroidException(Throwable exception) {
-        super(exception);
-    }
+    void stopSiddhiApp(String siddhiAppName);
 }

@@ -16,14 +16,14 @@
  * under the License.
  */
 
-package org.wso2.siddhi.android.platform;
+package io.siddhi.android.platform;
 
 import android.util.Log;
-import org.wso2.siddhi.android.platform.util.SiddhiAndroidException;
-import org.wso2.siddhi.core.SiddhiAppRuntime;
-import org.wso2.siddhi.core.SiddhiManager;
-import org.wso2.siddhi.core.exception.SiddhiAppCreationException;
-import org.wso2.siddhi.query.compiler.exception.SiddhiParserException;
+import io.siddhi.android.platform.util.SiddhiAndroidException;
+import io.siddhi.core.SiddhiAppRuntime;
+import io.siddhi.core.SiddhiManager;
+import io.siddhi.core.exception.SiddhiAppCreationException;
+import io.siddhi.query.compiler.exception.SiddhiParserException;
 
 import java.util.HashMap;
 import java.util.Map;

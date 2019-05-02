@@ -49,7 +49,7 @@ android {
     packagingOptions {
         pickFirst 'META-INF/LICENSE'
         pickFirst 'META-INF/DEPENDENCIES'
-        merge 'META-INF/annotations/org.wso2.siddhi.annotation.Extension'
+        merge 'META-INF/annotations/io.siddhi.annotation.Extension'
     }
 
     lintOptions {
@@ -58,8 +58,8 @@ android {
 }
 
 antlr4 {
-    extraArgs = ['-package', 'org.wso2.siddhi.query.compiler']
-    output = project.file("src/main/java/org/wso2/siddhi/query/compiler")
+    extraArgs = ['-package', 'io.siddhi.query.compiler']
+    output = project.file("src/main/java/io.siddhi/query/compiler")
 }
 
 dependencies {
@@ -69,25 +69,25 @@ dependencies {
     androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.1', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation('org.wso2.siddhi:siddhi-core:4.0.0-M86') {
+    implementation('io.siddhi:siddhi-core:5.0.0') {
         transitive = false
     }
-    annotationProcessor('org.wso2.siddhi:siddhi-annotations:4.0.0-M86') {
+    annotationProcessor('io.siddhi:siddhi-annotations:5.0.0') {
         transitive = false
     }
-    implementation('org.wso2.siddhi:siddhi-annotations:4.0.0-M86') {
+    implementation('io.siddhi:siddhi-annotations:5.0.0') {
         transitive = false
     }
-    implementation('org.wso2.siddhi:siddhi-query-api:4.0.0-M86') {
+    implementation('io.siddhi:siddhi-query-api:5.0.0') {
         transitive = false
     }
-    implementation('org.wso2.siddhi:siddhi-query-compiler:4.0.0-M86') {
+    implementation('io.siddhi:siddhi-query-compiler:5.0.0') {
         transitive = false
     }
-    implementation('org.wso2.extension.siddhi.map.text:siddhi-map-text:1.0.2') {
+    implementation('org.wso2.extension.siddhi.map.text:siddhi-map-text:2.0.0') {
         transitive = false
     }
-    implementation('org.wso2.extension.siddhi.map.keyvalue:siddhi-map-keyvalue:1.0.1') {
+    implementation('org.wso2.extension.siddhi.map.keyvalue:siddhi-map-keyvalue:2.0.0') {
         transitive = false
     }
     implementation "com.google.guava:guava:19.0"
@@ -105,7 +105,7 @@ uploadArchives {
     repositories.mavenDeployer {
         repository(url: System.getenv("DEPLOY_URL")) {
             authentication(userName: System.getenv("USER_NAME"), password: System.getenv("PASSWORD"))
-            pom.groupId = "org.wso2.siddhi.android.platform"
+            pom.groupId = "io.siddhi.android.platform"
             pom.artifactId = "siddhi-android-platform"
             pom.version = '1.0.0'
         }

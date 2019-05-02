@@ -16,7 +16,7 @@
  * under the License.
  */
 
-package org.wso2.siddhi.android.platform;
+package io.siddhi.android.platform;
 
 import android.app.Notification;
 import android.app.NotificationChannel;

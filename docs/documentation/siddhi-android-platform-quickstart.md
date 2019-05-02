@@ -32,25 +32,25 @@ allprojects {
 
 ```groovy
 
-implementation('org.wso2.siddhi:siddhi-core:4.0.0-M86') {
+implementation('io.siddhi:siddhi-core:5.0.0') {
    transitive = false
 }
-annotationProcessor('org.wso2.siddhi:siddhi-annotations:4.0.0-M86') {
+annotationProcessor('io.siddhi:siddhi-annotations:5.0.0') {
    transitive = false
 }
-implementation('org.wso2.siddhi:siddhi-annotations:4.0.0-M86') {
+implementation('io.siddhi:siddhi-annotations:5.0.0') {
    transitive = false
 }
-implementation('org.wso2.siddhi:siddhi-query-api:4.0.0-M86') {
+implementation('io.siddhi:siddhi-query-api:5.0.0') {
    transitive = false
 }
-implementation('org.wso2.siddhi:siddhi-query-compiler:4.0.0-M86') {
+implementation('io.siddhi:siddhi-query-compiler:5.0.0') {
    transitive = false
 }
-implementation('org.wso2.extension.siddhi.map.text:siddhi-map-text:1.0.2') {
+implementation('org.wso2.extension.siddhi.map.text:siddhi-map-text:2.0.0') {
    transitive = false
 }
-implementation('org.wso2.extension.siddhi.map.keyvalue:siddhi-map-keyvalue:1.0.1') {
+implementation('org.wso2.extension.siddhi.map.keyvalue:siddhi-map-keyvalue:2.0.0') {
    transitive = false
 }
 implementation "com.google.guava:guava:19.0"
@@ -64,8 +64,8 @@ implementation "org.antlr:antlr4-runtime:4.5.1"
 Next you have to add android libraries Siddhi Android Platfoorm and Siddhi IO Android. To add these you can either locally build them or get from the public repository.
 To get from public repository add following dependencies
 ```groovy
-implementation 'org.wso2.siddhi.android.platform:siddhi-android-platform:1.0.0'
-implementation 'org.wso2.siddhi.extension.io.android:siddhi-io-android:1.0.0'
+implementation 'io.siddhi.android.platform:siddhi-android-platform:1.0.0'
+implementation 'io.siddhi.extension.io.android:siddhi-io-android:1.0.0'
 ```
 To locally build, clone the required repos and do a gradle build 
 ```git
@@ -87,7 +87,7 @@ compileOptions {
 }
 packagingOptions {
    pickFirst 'META-INF/DEPENDENCIES'
-   merge 'META-INF/annotations/org.wso2.siddhi.annotation.Extension'
+   merge 'META-INF/annotations/io.siddhi.annotation.Extension'
 }
 ```
 To enable multidex add following lines to defaultConfig block in the module level build.gradle. 
